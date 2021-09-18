@@ -4,7 +4,7 @@ const useStyles = makeStyles({
   navbar: {
     backgroundColor: '#203040',
     '& a': {
-      color: 'white',
+      color: '#ffffff',
       marginLeft: 10,
     },
   },
@@ -27,5 +27,4 @@ const useStyles = makeStyles({
     marginBottom: 10,
   },
 });
-
 export default useStyles;

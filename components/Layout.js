@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import Head from 'next/head';
 import NextLink from 'next/link';
-
 import {
   AppBar,
   Toolbar,
@@ -17,7 +16,7 @@ import useStyles from '../utils/styles';
 import { Store } from '../utils/Store';
 import Cookies from 'js-cookie';
 
-export default function Layout({ description, title, children }) {
+export default function Layout({ title, description, children }) {
   const { state, dispatch } = useContext(Store);
   const { darkMode } = state;
   const theme = createTheme({
@@ -46,14 +45,13 @@ export default function Layout({ description, title, children }) {
   const classes = useStyles();
   const darkModeChangeHandler = () => {
     dispatch({ type: darkMode ? 'DARK_MODE_OFF' : 'DARK_MODE_ON' });
+    const newDarkMode = !darkMode;
+    Cookies.set('darkMode', newDarkMode ? 'ON' : 'OFF');
   };
-  const newDarkMode = !darkMode;
-  Cookies.set('darkMode', newDarkMode ? 'ON' : 'OFF');
-
   return (
     <div>
       <Head>
-        <title>{title ? `${title} - Buy All Shop ` : 'Buy All Shop'} </title>
+        <title>{title ? `${title} - BuyAll Shop` : 'BuyAll Shop'}</title>
         {description && <meta name='description' content={description}></meta>}
       </Head>
       <ThemeProvider theme={theme}>
@@ -61,7 +59,7 @@ export default function Layout({ description, title, children }) {
         <AppBar position='static' className={classes.navbar}>
           <Toolbar>
             <NextLink href='/' passHref>
-              <Link underline='none' color='inherit'>
+              <Link>
                 <Typography className={classes.brand}>BuyAll Shop</Typography>
               </Link>
             </NextLink>
@@ -72,17 +70,17 @@ export default function Layout({ description, title, children }) {
                 onChange={darkModeChangeHandler}
               ></Switch>
               <NextLink href='/cart' passHref>
-                <Link color='inherit'>Cart</Link>
+                <Link>Cart</Link>
               </NextLink>
               <NextLink href='/login' passHref>
-                <Link color='inherit'>Login</Link>
+                <Link>Login</Link>
               </NextLink>
             </div>
           </Toolbar>
         </AppBar>
         <Container className={classes.main}>{children}</Container>
         <footer className={classes.footer}>
-          <Typography>All rights reserved - Buy All Shop</Typography>
+          <Typography>All rights reserved. Next Amazona.</Typography>
         </footer>
       </ThemeProvider>
     </div>
