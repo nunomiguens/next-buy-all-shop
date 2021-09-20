@@ -4,6 +4,7 @@ import { onError } from '../../../utils/error';
 import multer from 'multer';
 import { v2 as cloudinary } from 'cloudinary';
 import streamifier from 'streamifier';
+import { Promise } from 'mongoose';
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
