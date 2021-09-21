@@ -23,7 +23,7 @@ import {
 
 import { useRouter } from 'next/router';
 import useStyles from '../utils/styles';
-import CheckoutWizard from '../components/CheckoutWizard1';
+import CheckoutWizard from '../components/CheckoutWizard';
 import { Promise } from 'mongoose';
 import { useSnackbar } from 'notistack';
 import { getError } from '../utils/error';
