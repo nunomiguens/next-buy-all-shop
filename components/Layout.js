@@ -83,7 +83,7 @@ export default function Layout({ title, description, children }) {
           <Toolbar>
             <NextLink href='/' passHref>
               <Link>
-                <Typography className={classes.brand}>JUST TESTING</Typography>
+                <Typography className={classes.brand}>BuyAll Shop</Typography>
               </Link>
             </NextLink>
             <div className={classes.grow}></div>
