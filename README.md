@@ -1,34 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BuyAll Shop eCommerce Platform
 
-## Getting Started
+> eCommerce platform built with Next.js, Typescript, MongoDB and MaterialUI.
 
-First, run the development server:
+This project was built for the last exercise of the course WebDesign in React Typescript FullStack FrontEnd.
 
-```bash
-npm run dev
-# or
-yarn dev
+- Demo Website : https://nunomiguens-buy-all-shop.tk/
+
+## Features
+
+- Full featured shopping cart
+- User profile with orders
+- Admin product management
+- Admin user management
+- Admin Order details page
+- Checkout process (shipping, payment method, etc)
+- PayPal / credit card integration
+- Database seeder (products & users)
+
+## Developed with
+
+- Next.js basics for setting up project, navigating between pages and data fetching;
+- Next.js for dynamic routing, SSG and SSR;
+- MaterialUI framework to build responsive website using custom theme;
+- React.js for decomposing components, context API and hooks;
+- Next Connect package to build backend API;
+- MongoDB and Mongoose to save and retrieve data like products, orders and users;
+- PayPal developer api to make online payment;
+- GitHub and Vercel for deploying application.
+
+## Run it Locally
+
+```
+$ git clone https://github.com/nunomiguens/next-buy-all-shop.git
+$ cd next-buy-all-shop
+$ npm install --global yarn
+$ yarn dev
+$ Open http://localhost:3000/api/seed
+$ Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Env Variables
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Create a .env file in the root and add the following
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
+MONGODB_URI= your mongodb uri
+JWT_SECRET= somethingsecret
+PAYPAL_CLIENT_ID= your paypal client id
+CLOUDINARY_NAME= your cloudinary client name
+CLOUDINARY_API_KEY= your cloudinary API key
+CLOUDINARY_API_SECRET= your cloudinary API secret
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Sample data
 
-## Learn More
+Sample User Logins
 
-To learn more about Next.js, take a look at the following resources:
+```
+email: admin@example.com (Admin)
+password: 123456
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+email: user@example.com (Customer)
+password: 123456
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Paypal credencials
 
-## Deploy on Vercel
+```
+Paypal
+email: sb-5z43tj7731790@personal.example.com
+password: JMU>l7@t
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Credit Card
+Card Number: 4032039363912561
+Expiration Date: 02/2022
+CVV: 550
+```
